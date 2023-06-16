@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main/css/car_tuning/style.css">
+    <link rel="stylesheet" href="{% static 'main/css/car_tuning/style.css' %}"> 
 
     <title> Tuning </title>
 </head>
@@ -13,7 +15,7 @@
         <div class = "money_header">
             
             <span> 
-                <img src="./main/icons/dollar.png" alt=""> 
+                <img src="{% static 'main/icons/dollar.png' %} " alt=""> 
             </span>
             
             <span>
@@ -24,13 +26,13 @@
 
         <div class = "pages_header">
           <a class = "" href=""> Autobazaar </a>
-          <a class = "" href="./garage.html"> Garage </a>
+          <a class = "" href="{% url 'garage' %}"> Garage </a>
           <a class = "" href=""> Buy from Dealer  </a>
         </div>
 
         <div class = "user_header">
             <h1> Suro299 </h1>
-            <img width="40px" src="./main/images/default_avatar.png" alt="">
+            <img width="40px" src="{% static 'main/images/default_avatar.png' %}" alt="">
         </div>
     </header>
 
@@ -46,31 +48,31 @@
             </span>
 
             <span class = "car-box__span_image_box">
-                <img src="./main/images/cars/bmw_e36_coupe.png" alt="">
+                <img src="{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt="">
             </span>
 
             <span  class = "car-box__span_tyuning-box">
                 <div value = "" id = "ecu_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_ecu_section"> 
-                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/ecu.png" alt="">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/ecu.png' %}" alt="">
                     <h1 class = "car-box__span_tuning-box-element_no-selected" > Ecu </h1> 
                 </div>
 
                 <div value = "" id = "engine_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_engine_section">
-                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/engine.png" alt="">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/engine.png' %}" alt="">
                     <h1 class = "car-box__span_tuning-box-element_no-selected" > Swap </h1> 
                 </div>
 
                 <div value = "" id = "turbo_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_turbo_section">
-                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/turbo.png" alt="">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/turbo.png' %}" alt="">
                     <h1 class = "car-box__span_tuning-box-element_no-selected" > Turbo </h1> 
                 </div>
 
                 <div value = "" id = "clutch_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_clutch_section">
-                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/clutch.png" alt="">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/clutch.png' %}" alt="">
                     <h1 class = "car-box__span_tuning-box-element_no-selected" > Clutch </h1> 
                 </div>
 
-                <a href="./detail_tuning.html" class="car-box__span_link-detail_tuning_button"><button>Details Tuning</button></a>
+                <a href="{% url 'detail_tuning' %}" class="car-box__span_link-detail_tuning_button"><button>Details Tuning</button></a>
 
 
                 
@@ -82,42 +84,43 @@
         <div class="slider">
 
             <!-- Chmoranas Post dnes  -->
-            <div id = "user_components" class="slides">
-                <button onclick = "install_detail( 'ecu', 'ecu_1' )" class = "lvl-4" id = "ecu_1" value = "ecu">
-                    <img src="./main/images/details/ecu.png" alt="">
+            <form method = "post" id = "user_components" class="slides">
+                {% csrf_token %}
+                <button type = "submit" onclick = "install_detail( 'ecu', 'ecu_1' )" class = "lvl-4" id = "ecu_1" value = "ecu">
+                    <img src="{% static 'main/images/details/ecu.png' %}" alt="">
                     <h1> Ecu - 1 </h1>
                 </button>
 
 
-                <button onclick = "install_detail( 'engine', 'engine_1' )" id = "engine_1" class = "lvl-3" class="active"  value = "engine" >
-                    <img src="./main/images/details/engine.png" alt="">
+                <button type = "submit" onclick = "install_detail( 'engine', 'engine_1' )" id = "engine_1" class = "lvl-3" class="active"  value = "engine" >
+                    <img src="{% static 'main/images/details/engine.png' %}" alt="">
                     <h1> Swap - 1 </h1>
                 </button>
 
-                <button onclick = "install_detail( 'clutch', 'clutch_1' )" id = "clutch_1" class = "lvl-3" class="active"  value = "clutch" >
-                    <img src="./main/images/details/clutch.png" alt="">
+                <button type = "submit" onclick = "install_detail( 'clutch', 'clutch_1' )" id = "clutch_1" class = "lvl-3" class="active"  value = "clutch" >
+                    <img src="{% static 'main/images/details/clutch.png' %}" alt="">
                     <h1> Clutch - 1 </h1>
                 </button>
 
 
-                <button onclick = "install_detail( 'turbo', 'turbo_1' )" id = "turbo_1" class = "lvl-1" value = "turbo">
-                    <img  src="./main/images/details/turbo.png" alt="">
+                <button type = "submit" onclick = "install_detail( 'turbo', 'turbo_1' )" id = "turbo_1" class = "lvl-1" value = "turbo">
+                    <img  src="{% static 'main/images/details/turbo.png' %}" alt="">
                     <h1> Turbo - 1 </h1>
                 </button>
 
-                <button onclick = "install_detail( 'turbo', 'turbo_2' )" id = "turbo_2" class = "lvl-2" value = "turbo">
-                    <img  src="./main/images/details/turbo.png" alt="">
+                <button type = "submit" onclick = "install_detail( 'turbo', 'turbo_2' )" id = "turbo_2" class = "lvl-2" value = "turbo">
+                    <img  src="{% static 'main/images/details/turbo.png' %}" alt="">
                     <h1> Turbo - 2 </h1>
                 </button>
 
-                <button onclick = "install_detail( 'turbo', 'turbo_3' )" id = "turbo_3" class = "lvl-4" value = "turbo">
-                    <img  src="./main/images/details/turbo.png" alt="">
+                <button type = "submit" onclick = "install_detail( 'turbo', 'turbo_3' )" id = "turbo_3" class = "lvl-4" value = "turbo">
+                    <img  src="{% static 'main/images/details/turbo.png' %}" alt="">
                     <h1> Turbo - 3 </h1>
                 </button>
-            </div>
+            </form>
           </div>
     </main>
 </body>
 
-<script src="./main/js/car_tuning/app.js"></script>
+<script src="{% static 'main/js/car_tuning/app.js' %}"></script>
 </html>

@@ -1,8 +1,6 @@
 
-
-
 function remove_detail(detail) {
-    var audio = new Audio("./main/sounds/04715.mp3");
+    var audio = new Audio("/static/main/sounds/04715.mp3");
     audio.volume = 0.1; 
     audio.play();
     
@@ -25,16 +23,16 @@ function remove_detail(detail) {
         
         if (component_seat.value.includes("ecu")) {    
             new_element.setAttribute("onclick", "install_detail( 'ecu', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/ecu.png"
+            new_element_image.src = "/static/main/images/details/ecu.png"
         } else if (component_seat.value.includes("engine")) {
             new_element.setAttribute("onclick", "install_detail( 'engine', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/engine.png"
+            new_element_image.src = "/static/main/images/details/engine.png"
         } else if (component_seat.value.includes("turbo")) {
             new_element.setAttribute("onclick", "install_detail( 'turbo', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/turbo.png"
+            new_element_image.src = "/static/main/images/details/turbo.png"
         } else if (component_seat.value.includes("clutch")) {
             new_element.setAttribute("onclick", "install_detail( 'clutch', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/clutch.png"
+            new_element_image.src = "/static/main/images/details/clutch.png"
         }
         
         component_seat.value = ""
@@ -47,7 +45,7 @@ function remove_detail(detail) {
 
 
 function install_detail(detail, new_detail) {
-    var audio = new Audio("./main/sounds/04715.mp3");
+    var audio = new Audio("/static/main/sounds/04715.mp3");
     audio.volume = 0.1; 
     audio.play();
 
@@ -70,16 +68,16 @@ function install_detail(detail, new_detail) {
         
         if (component_seat.value.includes("ecu")) {    
             new_element.setAttribute("onclick", "install_detail( 'ecu', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/ecu.png"
+            new_element_image.src = "/static/main/images/details/ecu.png"
         } else if (component_seat.value.includes("engine")) {
             new_element.setAttribute("onclick", "install_detail( 'engine', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/engine.png"
+            new_element_image.src = "/static/main/images/details/engine.png"
         } else if (component_seat.value.includes("turbo")) {
             new_element.setAttribute("onclick", "install_detail( 'turbo', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/turbo.png"
+            new_element_image.src = "/static/main/images/details/turbo.png"
         } else if (component_seat.value.includes("clutch")) {
             new_element.setAttribute("onclick", "install_detail( 'clutch', '" + component_seat.value + "')")
-            new_element_image.src = "./main/images/details/clutch.png"
+            new_element_image.src = "/static/main/images/details/clutch.png"
         }
 
     } 
