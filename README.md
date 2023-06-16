@@ -1,4 +1,4 @@
-#AutoTrader
+##AutoTrader
 
 AutoTrader is an online game where you can buy and sell cars and tuning components. You can purchase parts both from dealers (servers) and from other players. The game focuses on trading cars and improving their performance and appearance.
 
