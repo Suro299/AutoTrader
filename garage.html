@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main/css/garage/style.css">
+    <title> Garage </title>
+</head>
+<body>
+    <header>
+        <div class = "money_header">
+            <span> 
+                <img src="./main/icons/dollar.png" alt=""> 
+            </span>
+            <span>
+                <h1> $1000 </h1>
+            </span>
+        </div>
+
+        <div class = "pages_header">
+          <a class = "" href=""> Autobazaar </a>
+          <a class = "active" href=""> Garage </a>
+          <a class = "" href=""> Buy from Dealer  </a>
+        </div>
+
+        <div class = "user_header">
+            <h1> Suro299 </h1>
+            <img width="40px" src="./main/images/default_avatar.png" alt="">
+        </div>
+    </header>
+
+    <main>
+        <h1> Your Garage </h1>
+
+        <div class="slider">
+            <div class="slides">
+              
+              <div> 
+                <span class = "car_info_box">
+
+                  <span>
+                    <h1> BMW E36 Coupe </h1>
+                    <h2> $13433 </h2>
+                  </span>
+
+                  <img src="./main/images/cars/bmw_e36_coupe.png" alt=""> 
+                </span>
+
+                <span class = "car_buttons">
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Sell </div>
+                      <span class="icon">
+                        <img src="./main/icons/shopping_cart.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Tuning </div>
+                      <span class="icon">
+                        <img style="margin-top: 1rem;" src="./main/icons/turbo.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+                </span> 
+              </div>
+
+              <div> 
+                <span class = "car_info_box">
+
+                  <span>
+                    <h1> Toyota GT 86 </h1>
+                    <h2> $22971 </h2>
+                  </span>
+
+                  <img src="./main/images/cars/toyota_gt_86.png" alt=""> 
+                </span>
+
+                <span class = "car_buttons">
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Sell </div>
+                      <span class="icon">
+                        <img src="./main/icons/shopping_cart.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Tuning </div>
+                      <span class="icon">
+                        <img style="margin-top: 1rem;" src="./main/icons/turbo.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+                </span> 
+              </div>
+
+              <div> 
+                <span class = "car_info_box">
+
+                  <span>
+                    <h1> Mazda RX 7 </h1>
+                    <h2> $37479 </h2>
+                  </span>
+
+                  <img src="./main/images/cars/mazda_rx_7.png" alt=""> 
+                </span>
+
+                <span class = "car_buttons">
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Sell </div>
+                      <span class="icon">
+                        <img src="./main/icons/shopping_cart.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+
+                  <a href = "./car_tuning.html" class="button">
+                    <div class="button-wrapper">
+                      <div class="text"> Tuning </div>
+                      <span class="icon">
+                        <img style="margin-top: 1rem;" src="./main/icons/turbo.svg" alt="">
+                      </span>
+                    </div>
+                  </a>
+                </span> 
+              </div>
+
+            </div>
+          
+            <span class = "slider_button">
+                <a href="#" class = "prev" > <img src="./main/icons/scroll_buttons.png" alt=""> </a>
+                <a href="#" class="next"> <img src="./main/icons/scroll_buttons.png" alt=""> </a>
+            </span>
+        </div>
+          
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const slidesContainer = document.querySelector('.slides');
+      
+        prevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          slidesContainer.scrollBy({
+            left: -100,
+            behavior: 'smooth'
+          });
+        });
+      
+        nextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          slidesContainer.scrollBy({
+            left: 1000,
+            behavior: 'smooth'
+          });
+        });
+      });
+  </script>
+</html>

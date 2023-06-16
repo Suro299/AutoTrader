@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main/css/car_tuning/style.css">
+
+    <title> Tuning </title>
+</head>
+<body>
+    <header>
+        <div class = "money_header">
+            
+            <span> 
+                <img src="./main/icons/dollar.png" alt=""> 
+            </span>
+            
+            <span>
+                <h1> $1000</h1>
+            </span>
+
+        </div>
+
+        <div class = "pages_header">
+          <a class = "" href=""> Autobazaar </a>
+          <a class = "" href="./garage.html"> Garage </a>
+          <a class = "" href=""> Buy from Dealer  </a>
+        </div>
+
+        <div class = "user_header">
+            <h1> Suro299 </h1>
+            <img width="40px" src="./main/images/default_avatar.png" alt="">
+        </div>
+    </header>
+
+    <main>
+        <div class = "car-box">
+            <span class="car-box__span_info">
+                <h1> BMW E36 Coupe </h1>
+                <h3> Price: <p> $xxxx </p></h3>
+                <h3> Max Speed: <p> xxx km/h </p> </h3>
+                <h3> Power: <p> xxx hp </p> </h3>
+                <h3> Acceleration: <p> xxxx </p> </h3>
+                <h3> Controllability: <p> xxxx </p> </h3>
+            </span>
+
+            <span class = "car-box__span_image_box">
+                <img src="./main/images/cars/bmw_e36_coupe.png" alt="">
+            </span>
+
+            <span  class = "car-box__span_tyuning-box">
+                <div value = "" id = "ecu_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_ecu_section"> 
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/ecu.png" alt="">
+                    <h1 class = "car-box__span_tuning-box-element_no-selected" > Ecu </h1> 
+                </div>
+
+                <div value = "" id = "engine_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_engine_section">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/engine.png" alt="">
+                    <h1 class = "car-box__span_tuning-box-element_no-selected" > Swap </h1> 
+                </div>
+
+                <div value = "" id = "turbo_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_turbo_section">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/turbo.png" alt="">
+                    <h1 class = "car-box__span_tuning-box-element_no-selected" > Turbo </h1> 
+                </div>
+
+                <div value = "" id = "clutch_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_clutch_section">
+                    <img class = "car-box__span_tuning-box-element_no-selected" src="./main/images/details/clutch.png" alt="">
+                    <h1 class = "car-box__span_tuning-box-element_no-selected" > Clutch </h1> 
+                </div>
+
+                <a href="./detail_tuning.html" class="car-box__span_link-detail_tuning_button"><button>Details Tuning</button></a>
+
+
+                
+            </span>
+
+
+        </div>
+
+        <div class="slider">
+
+            <!-- Chmoranas Post dnes  -->
+            <div id = "user_components" class="slides">
+                <button onclick = "install_detail( 'ecu', 'ecu_1' )" class = "lvl-4" id = "ecu_1" value = "ecu">
+                    <img src="./main/images/details/ecu.png" alt="">
+                    <h1> Ecu - 1 </h1>
+                </button>
+
+
+                <button onclick = "install_detail( 'engine', 'engine_1' )" id = "engine_1" class = "lvl-3" class="active"  value = "engine" >
+                    <img src="./main/images/details/engine.png" alt="">
+                    <h1> Swap - 1 </h1>
+                </button>
+
+                <button onclick = "install_detail( 'clutch', 'clutch_1' )" id = "clutch_1" class = "lvl-3" class="active"  value = "clutch" >
+                    <img src="./main/images/details/clutch.png" alt="">
+                    <h1> Clutch - 1 </h1>
+                </button>
+
+
+                <button onclick = "install_detail( 'turbo', 'turbo_1' )" id = "turbo_1" class = "lvl-1" value = "turbo">
+                    <img  src="./main/images/details/turbo.png" alt="">
+                    <h1> Turbo - 1 </h1>
+                </button>
+
+                <button onclick = "install_detail( 'turbo', 'turbo_2' )" id = "turbo_2" class = "lvl-2" value = "turbo">
+                    <img  src="./main/images/details/turbo.png" alt="">
+                    <h1> Turbo - 2 </h1>
+                </button>
+
+                <button onclick = "install_detail( 'turbo', 'turbo_3' )" id = "turbo_3" class = "lvl-4" value = "turbo">
+                    <img  src="./main/images/details/turbo.png" alt="">
+                    <h1> Turbo - 3 </h1>
+                </button>
+            </div>
+          </div>
+    </main>
+</body>
+
+<script src="./main/js/car_tuning/app.js"></script>
+</html>
