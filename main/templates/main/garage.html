@@ -10,27 +10,8 @@
     <title> Garage </title>
 </head>
 <body>
-    <header>
-        <div class = "money_header">
-            <span> 
-                <img src="{% static 'main/icons/dollar.png' %}" alt=""> 
-            </span>
-            <span>
-                <h1> $1000 </h1>
-            </span>
-        </div>
-
-        <div class = "pages_header">
-          <a class = "" href=""> Autobazaar </a>
-          <a class = "active" href=""> Garage </a>
-          <a class = "" href=""> Buy from Dealer  </a>
-        </div>
-
-        <div class = "user_header">
-            <h1> Suro299 </h1>
-            <img width="40px" src="{% static 'main/images/default_avatar.png' %}" alt="">
-        </div>
-    </header>
+  
+    {% include 'main/inc/header.html' %}
 
     <main>
         <h1> Your Garage </h1>

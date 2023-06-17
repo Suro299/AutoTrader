@@ -182,6 +182,57 @@ main {
     & > img {
       filter: drop-shadow(0px 0px 50px #595959);
     }
+
+    .car-box__span_info__form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    
+    
+      & > button {
+          width: 80%;
+          cursor: pointer;
+          position: relative;
+          padding: 1rem 2.4rem;
+          font-size: 1.8rem;
+          color: rgb(115, 193, 98);
+          border: 2px solid rgb(80, 175, 59);
+          border-radius: 34px;
+          background-color: transparent;
+          font-weight: 600;
+          transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+          overflow: hidden;
+          
+          &::before {
+              width: 20rem;
+              content: '';
+              position: absolute;
+              inset: 0;
+              margin: auto;
+              border-radius: inherit;
+              scale: 0;
+              z-index: -1;
+              background-color: rgb(80, 175, 59);
+              transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+          }
+
+          &:hover::before {
+              scale: 3;
+          }
+
+          &:hover {
+              color: #212121;
+              scale: 1.04;
+              box-shadow: 0 0px 20px rgba(80, 175, 59, 0.419);
+          }
+        
+          &:active {
+              scale: 1;
+          }
+      }
+    }
   }
 
   .car-box__span_tyuning-box {
@@ -268,7 +319,7 @@ main {
     
     &:hover {
       color: #212121;
-      scale: 1.1;
+      scale: 1.04;
       box-shadow: 0 0px 20px rgba(160, 98, 193, 0.419);
     }
     

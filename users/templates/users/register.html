@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main/css/login_register/style.css">
+    <link rel="stylesheet" href="{% static 'users/css/login_register/style.css' %}">
     <title> Login </title>
 </head>
 <body>
@@ -13,25 +15,27 @@
    
     <main>
         <div class="login_box">
-            <h1>Login</h1>
+            <h1> Sign up </h1>
 
-            <form> 
+            <form method = "post">
+                {% csrf_token %} 
 
                 <input name = "username" type = "text" placeholder = "Username" required >
-                <input name = "password" type = "password" placeholder = "Password" required >
+                <input name = "password1" type = "password" placeholder = "Password" required >
+                <input name = "password2" type = "password" placeholder = "Password" required >
         
-                <button type = "submit"> Login !</button>
+                <button type = "submit"> Sign up ! </button>
             </form>
 
             <div class = "login_more_box">
-                <a href=""> Forget Password ?</a>
-                <a href="./register.html"> Sign up ! </a>
+                <a href=""></a>
+                <a href="{% url 'login' %}"> Log in !</a>
             </div>
 
           </div>
     
         <div class = "background_car">
-            <img src = "./main/images/cars/bmw.png" alt="">
+            <img src = "{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt="">
         </div>
     </main>
     

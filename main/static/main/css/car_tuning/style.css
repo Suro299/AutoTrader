@@ -121,6 +121,44 @@ main {
         color: #a0a0a0; }
   .car-box .car-box__span_image_box > img {
     filter: drop-shadow(0px 0px 50px #595959); }
+  .car-box .car-box__span_image_box .car-box__span_info__form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; }
+    .car-box .car-box__span_image_box .car-box__span_info__form > button {
+      width: 80%;
+      cursor: pointer;
+      position: relative;
+      padding: 1rem 2.4rem;
+      font-size: 1.8rem;
+      color: #73c162;
+      border: 2px solid #50af3b;
+      border-radius: 34px;
+      background-color: transparent;
+      font-weight: 600;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden; }
+      .car-box .car-box__span_image_box .car-box__span_info__form > button::before {
+        width: 20rem;
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: inherit;
+        scale: 0;
+        z-index: -1;
+        background-color: #50af3b;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+      .car-box .car-box__span_image_box .car-box__span_info__form > button:hover::before {
+        scale: 3; }
+      .car-box .car-box__span_image_box .car-box__span_info__form > button:hover {
+        color: #212121;
+        scale: 1.04;
+        box-shadow: 0 0px 20px rgba(80, 175, 59, 0.419); }
+      .car-box .car-box__span_image_box .car-box__span_info__form > button:active {
+        scale: 1; }
   .car-box .car-box__span_tyuning-box {
     display: flex;
     justify-content: center;
@@ -185,7 +223,7 @@ main {
       scale: 3; }
     .car-box__span_link-detail_tuning_button > button:hover {
       color: #212121;
-      scale: 1.1;
+      scale: 1.04;
       box-shadow: 0 0px 20px rgba(160, 98, 193, 0.419); }
     .car-box__span_link-detail_tuning_button > button:active {
       scale: 1; }

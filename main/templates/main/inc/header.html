@@ -1,0 +1,26 @@
+{% load static %}
+
+<header>
+    <div class = "money_header">
+        
+        <span> 
+            <img src="{% static 'main/icons/dollar.png' %} " alt=""> 
+        </span>
+        
+        <span>
+            <h1> ${{ user.money }} </h1>
+        </span>
+
+    </div>
+
+    <div class = "pages_header">
+      <a class = "{% if page == 'Autobazaar' %} active {% endif %}" href=""> Autobazaar </a>
+      <a class = "{% if page == 'garage' %} active {% endif %}" href="{% url 'garage' %}"> Garage </a>
+      <a class = "{% if page == 'bfd' %} active {% endif %}" href=""> Buy from Dealer  </a>
+    </div>
+
+    <div class = "user_header">
+        <h1> {{ user.username }} </h1>
+        <img width="40px" src="{{ user.avatar.url }}" alt="">
+    </div>
+</header>
