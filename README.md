@@ -18,10 +18,11 @@ AutoTrader is an online game where you can buy and sell cars and tuning componen
 ## Installation and launch
 
 1. Clone the AutoTrader repository on your computer.
-2. Run the "index.html" file in any modern web browser.
-3. Start the game by creating an account and choosing your first car.
-4. Explore the market and start trading cars and tuning components.
-5. Upgrade your vehicles and components to reach new heights in the AutoTrader game.
+2. Install required libraries (such as django, pillow)
+3. Go to directory core
+4. Run the project with python manage.py runserver
+5. Start the game by creating an account and choosing your first car.
+6. Upgrade your vehicles and components to reach new heights in the AutoTrader game.
 
 ## Contribution to the project
 
