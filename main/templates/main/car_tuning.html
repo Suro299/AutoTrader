@@ -30,10 +30,10 @@
 
                 <form method = "post" class = "car-box__span_info__form">
                     {% csrf_token %}
-                    <input type="text" id = "car_ecu" name="car_ecu" value = "{{ car.ecu.id }}">
-                    <input type="text" id = "car_engine" name="car_engine" value = "{{ car.engine.id }}" >
-                    <input type="text" id = "car_turbo" name="car_turbo" value = "{{ car.turbo.id }}">
-                    <input type="text" id = "car_clutch" name="car_clutch" value = "{{ car.clutch.id }}">
+                    <input type="hidden" id = "car_ecu" name="car_ecu" value = "{{ car.ecu.id }}">
+                    <input type="hidden" id = "car_engine" name="car_engine" value = "{{ car.engine.id }}" >
+                    <input type="hidden" id = "car_turbo" name="car_turbo" value = "{{ car.turbo.id }}">
+                    <input type="hidden" id = "car_clutch" name="car_clutch" value = "{{ car.clutch.id }}">
                     <button type = "submit"> Tune </button>
                 </form>                
             </span>

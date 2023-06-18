@@ -130,8 +130,9 @@
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
         const slidesContainer = document.querySelector('.slides');
-      
+
         prevBtn.addEventListener('click', function(e) {
+          
           e.preventDefault();
           slidesContainer.scrollBy({
             left: -100,
@@ -140,6 +141,7 @@
         });
       
         nextBtn.addEventListener('click', function(e) {
+          
           e.preventDefault();
           slidesContainer.scrollBy({
             left: 1000,

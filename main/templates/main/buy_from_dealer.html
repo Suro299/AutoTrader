@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/buy_from_dealer/style.css' %}">
+    <title> Buy From Dealer </title>
+</head>
+<body>
+    {% include 'main/inc/header.html' %}
+
+    <main>
+        <section class = "main__section main__filter_box">
+            <form method = "post" class="main__filter_box-form">
+                {% csrf_token %}
+                <input class="main__filter_box-form__input" type="text" placeholder = "Detail/Car Name">
+
+                <button class="main__filter_box-form__button" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                        <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+                    </svg>
+                </button>
+            
+            </form>
+        </section>
+
+        <section class = "main__section main__products_box">
+
+            <section class = "main__products_box-section" >
+
+                <span class = "main__products_box-header">
+                    <h1 class = "main__products_box-header__text"> Cars </h1>
+                    <div class = "main__products_box-header__line"></div>
+                </span>
+    
+                <section class="main__products_box__prod_section">
+                    <div class = "main__products_box-section__product_div">
+                        <div class = "product_div__image_div">
+                            <img class = "product_div__image_div-img" src="{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt="">
+                        </div>
+
+                        <div class = "product_div__info_div">
+                            <h1 class = "product_div__info_div__detail_name"> Car name </h1>
+                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                        </div>
+
+                        <div class = "product_div__buy_form_div">
+                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+            <section class = "main__products_box-section" >
+
+                <span class = "main__products_box-header">
+                    <h1 class = "main__products_box-header__text"> Details </h1>
+                    <div class = "main__products_box-header__line"></div>
+                </span>
+    
+                <section class="main__products_box__prod_section">
+                    <div class = "main__products_box-section__product_div">
+                        <div class = "product_div__image_div detail_1lvl">
+                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
+                        </div>
+
+                        <div class = "product_div__info_div">
+                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
+                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                        </div>
+
+                        <div class = "product_div__buy_form_div">
+                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                        </div>
+                    </div>
+
+                    <div class = "main__products_box-section__product_div">
+                        <div class = "product_div__image_div detail_2lvl">
+                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
+                        </div>
+
+                        <div class = "product_div__info_div">
+                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
+                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                        </div>
+
+                        <div class = "product_div__buy_form_div">
+                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                        </div>
+                    </div>
+
+                    <div class = "main__products_box-section__product_div">
+                        <div class = "product_div__image_div detail_3lvl">
+                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
+                        </div>
+
+                        <div class = "product_div__info_div">
+                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
+                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                        </div>
+
+                        <div class = "product_div__buy_form_div">
+                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                        </div>
+                    </div>
+
+                    <div class = "main__products_box-section__product_div">
+                        <div class = "product_div__image_div detail_4lvl">
+                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
+                        </div>
+
+                        <div class = "product_div__info_div">
+                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
+                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                        </div>
+
+                        <div class = "product_div__buy_form_div">
+                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+
+        </section>
+    </main>
+
+</body>
+</html>

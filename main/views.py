@@ -8,6 +8,13 @@ def garage(request):
     return render(request, "main/garage.html", {
         "page": "garage"
     })
+    
+    
+    
+def but_from_dealer(request):
+    return render(request, "main/buy_from_dealer.html", {
+        "page": "bfd"
+    })
 
 
 def detail_tuning(request):
