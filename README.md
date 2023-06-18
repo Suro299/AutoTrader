@@ -7,10 +7,10 @@ AutoTrader is an online game where you can buy and sell cars and tuning componen
 - Buy and sell different makes and models of cars.
 - Explore a wide range of tuning components including engines, suspensions, body parts and more.
 - Each component has 4 levels:
-   - Level 1: stock (standard).
-   - Level 2: improved version of stock.
-   - Level 3: further improvement.
-   - Level 4: maximum tuning level.
+  - Level 1: stock (standard).
+  - Level 2: improved version of stock.
+  - Level 3: further improvement.
+  - Level 4: maximum tuning level.
 - Upgrade components by combining two identical parts of the same level and making extra money.
 - Get the component of the next level by combining two identical parts of the previous level.
 - Personalize your vehicles with a variety of components and achieve the ultimate in performance and style.
