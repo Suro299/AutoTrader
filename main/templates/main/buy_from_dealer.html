@@ -37,20 +37,23 @@
                 </span>
     
                 <section class="main__products_box__prod_section">
-                    <div class = "main__products_box-section__product_div">
-                        <div class = "product_div__image_div">
-                            <img class = "product_div__image_div-img" src="{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt="">
-                        </div>
+                    {% for i in dealer_cars %}
+                        <div class = "main__products_box-section__product_div">
+                            <div class = "product_div__image_div">
+                                <img class = "product_div__image_div-img" src="{{ i.product.image.url }}" alt="">
+                            </div>
 
-                        <div class = "product_div__info_div">
-                            <h1 class = "product_div__info_div__detail_name"> Car name </h1>
-                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
-                        </div>
+                            <div class = "product_div__info_div">
+                                <h1 class = "product_div__info_div__detail_name"> {{ i.product.name }} </h1>
+                                <h2 class = "product_div__info_div__detail_price"> ${{ i.product.price }}</h2>
+                            </div>
 
-                        <div class = "product_div__buy_form_div">
-                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
+                            <form method = "post" class = "product_div__buy_form_div">
+                                {% csrf_token %}
+                                <button class = "product_div__buy_form_div-button" value = "{{ i.id }}" name = "buy_car" type = "submit" > Buy </button>
+                            </form>
                         </div>
-                    </div>
+                    {% endfor %}
                 </section>
 
             </section>
@@ -63,66 +66,25 @@
                 </span>
     
                 <section class="main__products_box__prod_section">
+                    {% for i in dealer_details %}
                     <div class = "main__products_box-section__product_div">
-                        <div class = "product_div__image_div detail_1lvl">
-                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
+                        <div class = "product_div__image_div detail_{{ i.product.level }}lvl">
+                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="{{ i.product.type.image.url }}" alt="">
                         </div>
 
                         <div class = "product_div__info_div">
-                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
-                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
+                            <h1 class = "product_div__info_div__detail_name"> {{ i.product.type.name }} </h1>
+                            <h2 class = "product_div__info_div__detail_price"> ${{ i.product.price }} </h2>
                         </div>
 
-                        <div class = "product_div__buy_form_div">
-                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
-                        </div>
+                        <form method = "post" class = "product_div__buy_form_div">
+                            {% csrf_token %}
+                            <button class = "product_div__buy_form_div-button" value = "{{ i.id }}" name = "buy_detail" type = "submit" > Buy </button>
+                        </form>
                     </div>
+                    {% endfor %}
 
-                    <div class = "main__products_box-section__product_div">
-                        <div class = "product_div__image_div detail_2lvl">
-                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
-                        </div>
-
-                        <div class = "product_div__info_div">
-                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
-                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
-                        </div>
-
-                        <div class = "product_div__buy_form_div">
-                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
-                        </div>
-                    </div>
-
-                    <div class = "main__products_box-section__product_div">
-                        <div class = "product_div__image_div detail_3lvl">
-                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
-                        </div>
-
-                        <div class = "product_div__info_div">
-                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
-                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
-                        </div>
-
-                        <div class = "product_div__buy_form_div">
-                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
-                        </div>
-                    </div>
-
-                    <div class = "main__products_box-section__product_div">
-                        <div class = "product_div__image_div detail_4lvl">
-                            <img class = "product_div__image_div-img product_div__image_div-img-detail" src="../../static/main/images/details/turbo.png" alt="">
-                        </div>
-
-                        <div class = "product_div__info_div">
-                            <h1 class = "product_div__info_div__detail_name"> Detail Name </h1>
-                            <h2 class = "product_div__info_div__detail_price"> $xxxx</h2>
-                        </div>
-
-                        <div class = "product_div__buy_form_div">
-                            <a href = "#" class = "product_div__buy_form_div-button" value = "{{ i.id }}" type = "submit" > Open </a>
-                        </div>
-                    </div>
-
+                    
                 </section>
 
             </section>

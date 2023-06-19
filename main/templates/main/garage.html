@@ -17,21 +17,23 @@
         <h1> Your Garage </h1>
 
         <div class="slider">
-            <div class="slides">
+            
+          <div class="slides">
               
+              {% for i in user.cars.all %}
               <div> 
                 <span class = "car_info_box">
 
                   <span>
-                    <h1> BMW E36 Coupe </h1>
-                    <h2> $13433 </h2>
+                    <h1> {{ i.name }} </h1>
+                    <h2> ${{ i.price }} </h2>
                   </span>
 
-                  <img src="{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt=""> 
+                  <img src="{{ i.image.url }}" alt=""> 
                 </span>
 
                 <span class = "car_buttons">
-                  <a href = "{% url 'car_tuning' %}" class="button">
+                  <a href = "#" class="button">
                     <div class="button-wrapper">
                       <div class="text"> Sell </div>
                       <span class="icon">
@@ -40,39 +42,7 @@
                     </div>
                   </a>
 
-                  <a href = "{% url 'car_tuning' %}" class="button">
-                    <div class="button-wrapper">
-                      <div class="text"> Tuning </div>
-                      <span class="icon">
-                        <img style="margin-top: 1rem;" src="{% static 'main/icons/turbo.svg' %}" alt="">
-                      </span>
-                    </div>
-                  </a>
-                </span> 
-              </div>
-
-              <div> 
-                <span class = "car_info_box">
-
-                  <span>
-                    <h1> Toyota GT 86 </h1>
-                    <h2> $22971 </h2>
-                  </span>
-
-                  <img src="{% static 'main/images/cars/toyota_gt_86.png' %} " alt=""> 
-                </span>
-
-                <span class = "car_buttons">
-                  <a href = "{% url 'car_tuning' %}" class="button">
-                    <div class="button-wrapper">
-                      <div class="text"> Sell </div>
-                      <span class="icon"> 
-                        <img src="{% static 'main/icons/shopping_cart.svg' %}" alt="">
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href = "{% url 'car_tuning' %}" class="button">
+                  <a href = "{% url 'car_tuning' i.id %}" class="button">
                     <div class="button-wrapper">
                       <div class="text"> Tuning </div>
                       <span class="icon">
@@ -82,41 +52,10 @@
                   </a>
                 </span> 
               </div>
+              {% endfor %}
 
-              <div> 
-                <span class = "car_info_box">
-
-                  <span>
-                    <h1> Mazda RX 7 </h1>
-                    <h2> $37479 </h2>
-                  </span>
-
-                  <img src="{% static 'main/images/cars/mazda_rx_7.png' %}" alt=""> 
-                </span>
-
-                <span class = "car_buttons">
-                  <a href = "{% url 'car_tuning' %}" class="button">
-                    <div class="button-wrapper">
-                      <div class="text"> Sell </div>
-                      <span class="icon">
-                        <img src="{% static 'main/icons/shopping_cart.svg' %}" alt="">
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href = "{% url 'car_tuning' %}" class="button">
-                    <div class="button-wrapper">
-                      <div class="text"> Tuning </div>
-                      <span class="icon">
-                        <img style="margin-top: 1rem;" src="{% static 'main/icons/turbo.svg' %} " alt="">
-                      </span>
-                    </div>
-                  </a>
-                </span> 
-              </div>
 
             </div>
-          
             <span class = "slider_button">
                 <a href="#" class = "prev" > <img src="{% static 'main/icons/scroll_buttons.png' %}" alt=""> </a>
                 <a href="#" class="next"> <img src="{% static 'main/icons/scroll_buttons.png' %}" alt=""> </a>

@@ -210,8 +210,8 @@ main {
               cursor: pointer;
               position: relative;
               font-size: 1.8rem;
-              color: #62a0d6;
-              border: 2px solid #4098ce;
+              color: #8bd662;
+              border: 2px solid #5ace40;
               border-radius: 34px;
               background-color: transparent;
               font-weight: 600;
@@ -226,14 +226,14 @@ main {
                 border-radius: inherit;
                 scale: 0;
                 z-index: -1;
-                background-color: #4aaada;
+                background-color: #6cda4a;
                 transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
               main .main__products_box .main__products_box-section .main__products_box__prod_section .main__products_box-section__product_div .product_div__buy_form_div .product_div__buy_form_div-button:hover::before {
                 scale: 3; }
               main .main__products_box .main__products_box-section .main__products_box__prod_section .main__products_box-section__product_div .product_div__buy_form_div .product_div__buy_form_div-button:hover {
                 color: #212121;
                 scale: 1.04;
-                box-shadow: 0 0px 20px rgba(59, 96, 175, 0.419); }
+                box-shadow: 0 0px 20px rgba(69, 175, 59, 0.419); }
               main .main__products_box .main__products_box-section .main__products_box__prod_section .main__products_box-section__product_div .product_div__buy_form_div .product_div__buy_form_div-button:active {
                 scale: 1; }
 

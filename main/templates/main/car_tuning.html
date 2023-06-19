@@ -18,15 +18,15 @@
         <div class = "car-box">
             <span class="car-box__span_info">
                 <h1> {{ car.name }} </h1>
-                <h3> Price: <p> $xxxx </p></h3>
-                <h3> Max Speed: <p> xxx km/h </p> </h3>
-                <h3> Power: <p> xxx hp </p> </h3>
-                <h3> Acceleration: <p> xxxx </p> </h3>
-                <h3> Controllability: <p> xxxx </p> </h3>
+                <h3> Price: <p> ${{ car.price }} </p></h3>
+                <h3> Max Speed: <p> {{ car.max_speed}} km/h </p> </h3>
+                <h3> Power: <p> {{ car.power}} hp </p> </h3>
+                <h3> Acceleration: <p> {{ car.acceleration}} </p> </h3>
+                <h3> Controllability: <p> {{ car.controllability}} </p> </h3>
             </span>
 
             <span class = "car-box__span_image_box">
-                <img src="{% static 'main/images/cars/bmw_e36_coupe.png' %}" alt="">
+                <img src="{{ car.image.url }}" alt="">
 
                 <form method = "post" class = "car-box__span_info__form">
                     {% csrf_token %}
@@ -103,13 +103,13 @@
             <form method = "post" id = "user_components" class="slides">
                 {% csrf_token %}
 
-                {% for i in details%}
-                {% if not i.in_car%}
-                    <button type = "submit" onclick = "install_detail( '{{ i.type.name|lower }}', '{{ i.type.name|lower }}_{{ i.id }}' )" id = "{{ i.type.name|lower }}_{{ i.id }}" class = "lvl-{{ i.level }}" value = "{{ i.type.name|lower }}">
-                        <img  src="{{ i.type.image.url }}" alt="">
-                        <h1> {{ i.type.name }} - {{ i.id }}</h1>
-                    </button>
-                {% endif %}
+                {% for i in user.details.all %}
+                    {% if not i.in_car%}
+                        <button type = "submit" onclick = "install_detail( '{{ i.type.name|lower }}', '{{ i.type.name|lower }}_{{ i.id }}' )" id = "{{ i.type.name|lower }}_{{ i.id }}" class = "lvl-{{ i.level }}" value = "{{ i.type.name|lower }}">
+                            <img  src="{{ i.type.image.url }}" alt="">
+                            <h1> {{ i.type.name }} - {{ i.id }}</h1>
+                        </button>
+                    {% endif %}
                 {% endfor %}
 
             </form>

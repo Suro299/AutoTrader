@@ -293,6 +293,7 @@ main {
             display: flex;
             align-items: center;
             justify-content: center;
+            
             .product_div__buy_form_div-button {
               display: flex;
               justify-content: center;
@@ -303,8 +304,8 @@ main {
               cursor: pointer;
               position: relative;
               font-size: 1.8rem;
-              color: rgb(98, 160, 214);
-              border: 2px solid rgb(64, 152, 206);
+              color: rgb(139, 214, 98);
+              border: 2px solid rgb(90, 206, 64);
               border-radius: 34px;
               background-color: transparent;
               font-weight: 600;
@@ -312,30 +313,30 @@ main {
               overflow: hidden;
               
               &::before {
-                  width: 20rem;
-                  content: '';
-                  position: absolute;
-                  inset: 0;
-                  margin: auto;
-                  border-radius: inherit;
-                  scale: 0;
-                  z-index: -1;
-                  background-color: rgb(74, 170, 218);
-                  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+                width: 20rem;
+                content: '';
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                border-radius: inherit;
+                scale: 0;
+                z-index: -1;
+                background-color: rgb(108, 218, 74);
+                transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
               }
     
               &:hover::before {
-                  scale: 3;
+                scale: 3;
               }
     
               &:hover {
-                  color: #212121;
-                  scale: 1.04;
-                  box-shadow: 0 0px 20px rgba(59, 96, 175, 0.419);
+                color: #212121;
+                scale: 1.04;
+                box-shadow: 0 0px 20px rgba(69, 175, 59, 0.419);
               }
             
               &:active {
-                  scale: 1;
+                scale: 1;
               }
             }
             
