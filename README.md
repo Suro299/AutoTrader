@@ -34,8 +34,6 @@ AutoTrader is distributed under the [MIT License](https://opensource.org/license
 
 ## Connection
 
-If you have any questions or suggestions to improve your AutoTrader game, please contact us by visiting our [support web page](https://www.autotradergame.com/support).
-
-More information about the project, including documentation and guides, can be found on our [official website](https://www.autotradergame.com).
+Not available yet
 
 ---
