@@ -16,6 +16,11 @@ class Detail(models.Model):
     in_car = models.ForeignKey("Car", on_delete = models.DO_NOTHING, blank = True, null = True)
     price = models.PositiveBigIntegerField("Detail Price", default = 0)
     
+    added_max_speed = models.PositiveIntegerField("Added max speed", default = 0)
+    added_power = models.PositiveIntegerField("Added power", default = 0)
+    added_acceleration = models.PositiveIntegerField("Added acceleration", default = 0)
+    added_controllability = models.PositiveIntegerField("Added controllability", default = 0)
+    
     def __str__(self) -> str:
         return f"id - {self.id} |  {self.type.name}  | Level - {self.level}"
     
