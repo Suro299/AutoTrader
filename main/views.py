@@ -279,6 +279,3 @@ def car_tuning(request, id):
         "car": car,
         "details": details
     })
-
-
-
