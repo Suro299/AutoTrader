@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/car_tuning/style.css' %}"> 
+
+    <title> Tuning </title>
+</head>
+<body>
+    
+    {% include 'main/inc/header.html' %}
+
+    <main>
+        <div class = "car-box">
+            <span class="car-box__span_info">
+                <h1> {{ car.name }} </h1>
+                <h3> Price: <p> ${{ car.price }} </p></h3>
+                <h3> Max Speed: <p> {{ car.max_speed}} km/h </p> </h3>
+                <h3> Power: <p> {{ car.power}} hp </p> </h3>
+                <h3> Acceleration: <p> {{ car.acceleration}} </p> </h3>
+                <h3> Controllability: <p> {{ car.controllability}} </p> </h3>
+            </span>
+
+            <span class = "car-box__span_image_box">
+                <img src="{{ car.image.url }}" alt="">
+
+                <form method = "post" class = "car-box__span_info__form">
+                    {% csrf_token %}
+                    <button type = "submit"> Buy </button>
+                </form>                
+            </span>
+
+            <span  class = "car-box__span_tyuning-box">
+                {% if car.ecu %}
+                    <div value = "ecu_{{car.ecu.id}}" onclick="remove_detail('ecu')" id = "ecu_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_ecu_section lvl-{{ car.ecu.level }}">
+                        <img class = "" src="{{ car.ecu.type.image.url }}" alt="">
+                        <h1 class = "" > ecu </h1> 
+                    </div>
+                {% else%}
+                    <div value = "" id = "ecu_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_ecu_section">
+                        <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/ecu.png' %}" alt="">
+                        <h1 class = "car-box__span_tuning-box-element_no-selected" > ecu </h1> 
+                    </div>
+                {% endif %}
+
+                {% if car.engine %}
+                    <div value = "engine_{{car.engine.id}}" onclick="remove_detail('engine')" id = "engine_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_engine_section lvl-{{ car.engine.level }}">
+                        <img class = "" src="{{ car.engine.type.image.url }}" alt="">
+                        <h1 class = "" > Engine </h1> 
+                    </div>
+                {% else%}
+                    <div value = "" id = "engine_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_engine_section">
+                        <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/engine.png' %}" alt="">
+                        <h1 class = "car-box__span_tuning-box-element_no-selected" > Swap </h1> 
+                    </div>
+                {% endif %}
+
+                
+                {% if car.turbo %}
+                    <div value = "turbo_{{car.turbo.id}}" onclick="remove_detail('turbo')" id = "turbo_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_turbo_section lvl-{{ car.turbo.level }}">
+                        <img class = "" src="{{ car.turbo.type.image.url }}" alt="">
+                        <h1 class = "" > Turbo </h1> 
+                    </div>
+                {% else %}
+                    <div value = "" id = "turbo_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_turbo_section">
+                        <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/turbo.png' %}" alt="">
+                        <h1 class = "car-box__span_tuning-box-element_no-selected" > Turbo </h1> 
+                    </div>
+                {% endif %}
+
+                {% if car.clutch %}
+                    <div value = "clutch_{{car.clutch.id}}" onclick="remove_detail('clutch')" id = "clutch_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_clutch_section lvl-{{ car.clutch.level }}">
+                        <img class = "" src="{{ car.clutch.type.image.url }}" alt="">
+                        <h1 class = "" > clutch </h1> 
+                    </div>
+                {% else %}
+                    <div value = "" id = "clutch_seat" class = "car-box__span_tuning-box-element car-box__span_tuning-box_clutch_section">
+                        <img class = "car-box__span_tuning-box-element_no-selected" src="{% static 'main/images/details/clutch.png' %}" alt="">
+                        <h1 class = "car-box__span_tuning-box-element_no-selected" > clutch </h1> 
+                    </div>
+                {% endif %}
+            </span>
+
+
+        </div>
+
+    </main>
+
+    
+</body>
+</html>

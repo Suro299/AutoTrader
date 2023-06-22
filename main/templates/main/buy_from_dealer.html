@@ -48,9 +48,8 @@
                                 <h2 class = "product_div__info_div__detail_price"> ${{ i.product.price }}</h2>
                             </div>
 
-                            <form method = "post" class = "product_div__buy_form_div">
-                                {% csrf_token %}
-                                <button class = "product_div__buy_form_div-button" value = "{{ i.id }}" name = "buy_car" type = "submit" > Buy </button>
+                            <form class = "product_div__buy_form_div">
+                                <a class = "product_div__buy_form_div-button" href="{% url 'car_detail' i.id  %}"> Open </a>
                             </form>
                         </div>
                     {% endfor %}
@@ -81,6 +80,7 @@
                             {% csrf_token %}
                             <button class = "product_div__buy_form_div-button" value = "{{ i.id }}" name = "buy_detail" type = "submit" > Buy </button>
                         </form>
+                  
                     </div>
                     {% endfor %}
 

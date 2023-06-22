@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Car, Detail, DealerCar, DealerDetail
 from django.db.models import Subquery, OuterRef
 from users.models import CustomUser
+
 def garage(request):
     if not (request.user.is_authenticated):
         return redirect("login") 
@@ -10,20 +11,15 @@ def garage(request):
         "page": "garage"
     })
     
-    
-    
-def but_from_dealer(request):
-    
-    dealer_cars = DealerCar.objects.all()
-    dealer_details =  DealerDetail.objects.all()
+
+def car_detail(request, id):
+    car = DealerCar.objects.get(id = id)
     
     if request.method == "POST":
-        buy_detail = request.POST.get("buy_detail")
-        buy_car = request.POST.get("buy_car")
+        # STE ANPAYMAN STUGI VOR AVTOBAZARUM LIni
         
-        if buy_car:
-            car = DealerCar.objects.get(id = buy_car)
-            
+        if car in DealerCar.objects.all():
+            print("a")
             if request.user.money >= car.product.price:
                 if car.count > 0:
                     user = CustomUser.objects.get(id = request.user.id)
@@ -53,8 +49,21 @@ def but_from_dealer(request):
                         
                     user.save()
                     return redirect("bfd")
-                
-        elif buy_detail:
+    
+    return render(request, "main/car_detail.html" , {
+        "car": car.product
+    })
+    
+    
+def but_from_dealer(request):
+    
+    dealer_cars = DealerCar.objects.all()
+    dealer_details =  DealerDetail.objects.all()
+    
+    if request.method == "POST":
+        buy_detail = request.POST.get("buy_detail")
+              
+        if buy_detail:
             detail = DealerDetail.objects.get(id = buy_detail)     
             
             if request.user.money >= detail.product.price:
