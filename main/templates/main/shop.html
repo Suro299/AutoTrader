@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main/css/buy_from_dealer/style.css' %}">
-    <title> Buy From Dealer </title>
+    <link rel="stylesheet" href="{% static 'main/css/shop/style.css' %}">
+    <title> AutoTrader | {{ page }} </title>
 </head>
 <body>
     {% include 'main/inc/header.html' %}
@@ -23,8 +23,28 @@
                         <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
                     </svg>
                 </button>
-            
             </form>
+
+            <div class = "main__filter_box-div">
+                <div class="customCheckBoxHolder">
+                    <input checked type="checkbox" id="cCB1" class="customCheckBoxInput">
+                    <label for="cCB1" class="customCheckBoxWrapper">
+                        <div class="customCheckBox">
+                            <div class="inner">Cars</div>
+                        </div>
+                    </label>
+                </div>
+
+                    
+                <div class="customCheckBoxHolder">
+                    <input checked type="checkbox" id="cCB2" class="customCheckBoxInput">
+                    <label for="cCB2" class="customCheckBoxWrapper">
+                        <div class="customCheckBox">
+                            <div class="inner">Details</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
         </section>
 
         <section class = "main__section main__products_box">
@@ -37,8 +57,8 @@
                 </span>
     
                 <section class="main__products_box__prod_section">
-                    {% for i in dealer_cars %}
-                        <div class = "main__products_box-section__product_div">
+                    {% for i in shop_cars %}
+                        <div class = "main__products_box-section__product_div car">
                             <div class = "product_div__image_div">
                                 <img class = "product_div__image_div-img" src="{{ i.product.image.url }}" alt="">
                             </div>
@@ -65,8 +85,8 @@
                 </span>
     
                 <section class="main__products_box__prod_section">
-                    {% for i in dealer_details %}
-                    <div class = "main__products_box-section__product_div">
+                    {% for i in shop_details %}
+                    <div class = "main__products_box-section__product_div detail">
                         <div class = "product_div__image_div detail_{{ i.product.level }}lvl">
                             <img class = "product_div__image_div-img product_div__image_div-img-detail" src="{{ i.product.type.image.url }}" alt="">
                         </div>
@@ -91,6 +111,30 @@
 
         </section>
     </main>
-
+    <script>
+        const carsCheckbox = document.getElementById('cCB1');
+        const detailsCheckbox = document.getElementById('cCB2');
+        const carElements = document.getElementsByClassName('car');
+        const detailElements = document.getElementsByClassName('detail');
+    
+        carsCheckbox.addEventListener('change', function () {
+            toggleElements(carsCheckbox.checked, carElements, detailElements);
+        });
+    
+        detailsCheckbox.addEventListener('change', function () {
+            toggleElements(detailsCheckbox.checked, detailElements, carElements);
+        });
+    
+        function toggleElements(checked, elements, other_elemets) {
+            for (let i = 0; i < elements.length; i++) {
+                if (checked) {
+                    elements[i].style.display = "flex"
+                }
+                else {
+                    elements[i].style.display = "none"
+                }
+            }
+        }
+    </script>
 </body>
 </html>

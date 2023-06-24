@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class DetailType(models.Model):
     name = models.CharField("Detail", max_length = 50, default = "NoName")
     image = models.ImageField("Image")
@@ -58,6 +57,7 @@ class Car(models.Model):
     
     
 class DealerCar(models.Model):
+    
     product = models.ForeignKey(Car, on_delete = models.CASCADE)
     count = models.PositiveBigIntegerField("Product Count", default = 0)
     
@@ -70,3 +70,23 @@ class DealerDetail(models.Model):
 
     def __str__(self) -> str:
         return f"detail id - {self.product.id} | id - {self.id} | {self.count} / {self.product.type.name} / level-{self.product.level} | {self.product.price}"
+
+class AutoMarketCar(models.Model):
+    from users.models import CustomUser
+    
+    product = models.ForeignKey(Car, on_delete = models.CASCADE)
+    price = models.PositiveBigIntegerField("Price")
+    owner = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
+    
+    def __str__(self) -> str:
+        return f"car id - {self.product.id} | id - {self.id} | {self.count} / {self.product.name} | {self.price}"
+    
+class AutoMarketDetail(models.Model):
+    from users.models import CustomUser
+    
+    product = models.ForeignKey(Detail, on_delete = models.CASCADE)
+    price = models.PositiveBigIntegerField("Price")
+    owner = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
+    
+    def __str__(self) -> str:
+        return f"detail id - {self.product.id} | id - {self.id} | {self.count} / {self.product.type.name} / level-{self.product.level} | {self.price}"

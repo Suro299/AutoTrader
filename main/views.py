@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Car, Detail, DealerCar, DealerDetail
-from django.db.models import Subquery, OuterRef
+from .models import Car, Detail, DealerCar, DealerDetail, AutoMarketCar, AutoMarketDetail
 from users.models import CustomUser
 
 def garage(request):
@@ -10,6 +9,9 @@ def garage(request):
     return render(request, "main/garage.html", {
         "page": "garage"
     })
+    
+    
+    
     
 
 def car_detail(request, id):
@@ -56,9 +58,8 @@ def car_detail(request, id):
     
     
 def but_from_dealer(request):
-    
-    dealer_cars = DealerCar.objects.all()
-    dealer_details =  DealerDetail.objects.all()
+    shop_cars = DealerCar.objects.all()
+    shop_details =  DealerDetail.objects.all()
     
     if request.method == "POST":
         buy_detail = request.POST.get("buy_detail")
@@ -93,10 +94,21 @@ def but_from_dealer(request):
                     user.save()
                     return redirect("bfd")
             
-    return render(request, "main/buy_from_dealer.html", {
+    return render(request, "main/shop.html", {
         "page": "bfd",
-        "dealer_cars": dealer_cars,
-        "dealer_details": dealer_details,
+        "shop_cars": shop_cars,
+        "shop_details": shop_details,
+    })
+    
+    
+def auto_market(request):
+    shop_cars = AutoMarketCar.objects.all()
+    shop_details =  AutoMarketDetail.objects.all()
+
+    return render(request, "main/shop.html", {
+        "page": "auto_market",
+        "shop_cars": shop_cars,
+        "shop_details": shop_details,
     })
 
 

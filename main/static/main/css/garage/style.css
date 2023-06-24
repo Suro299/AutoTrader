@@ -67,6 +67,99 @@ header {
       aspect-ratio: 1/1;
       margin-left: 1rem; }
 
+.sell_menu {
+  width: 60%;
+  height: 60%;
+  border: 2px solid #1f1f1f;
+  background: #141414;
+  color: whitesmoke;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem;
+  display: none; }
+  .sell_menu .sell_menu__form {
+    background-color: #1f1f1f;
+    box-shadow: 0 0 10px 5px #101010;
+    width: 38%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px; }
+    .sell_menu .sell_menu__form .sell_menu__form-title {
+      font-size: 3.8rem;
+      margin-bottom: 1rem; }
+    .sell_menu .sell_menu__form .sell_menu__form-car_name {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+      color: #a0a0a0; }
+    .sell_menu .sell_menu__form .sell_menu__form-input {
+      width: 60%;
+      height: 4rem;
+      background-color: transparent;
+      border-radius: 10px;
+      border: 2px solid #027502;
+      transition: 0.2s;
+      outline: none;
+      color: white;
+      padding-left: 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 2rem 0; }
+      .sell_menu .sell_menu__form .sell_menu__form-input:focus {
+        border: 2px solid #2dbf2d; }
+    .sell_menu .sell_menu__form .sell_menu__form-label__input-checkbox {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #9d3ab1;
+      border-radius: 5px;
+      background-color: transparent;
+      display: inline-block;
+      position: relative;
+      margin-right: 10px;
+      cursor: pointer; }
+      .sell_menu .sell_menu__form .sell_menu__form-label__input-checkbox:before {
+        content: "";
+        background-color: #b530d0;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+        transition: all 0.1s ease-in-out; }
+      .sell_menu .sell_menu__form .sell_menu__form-label__input-checkbox:checked:before {
+        transform: translate(-50%, -50%) scale(1); }
+    .sell_menu .sell_menu__form .sell_menu__form-label {
+      margin: 0 0 4rem 0;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center; }
+    .sell_menu .sell_menu__form .sell_menu__form-submit_button {
+      width: 70%;
+      height: 4rem;
+      border-radius: 10px;
+      border: none;
+      background-color: #2fa22f;
+      margin-top: 3rem;
+      transition: 0.2s;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: whitesmoke; }
+      .sell_menu .sell_menu__form .sell_menu__form-submit_button:hover {
+        cursor: pointer;
+        background-color: #4ec34e; }
+
 main {
   height: 100%;
   grid-area: 2 / 1 / 6 / 6;
@@ -123,7 +216,8 @@ main {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 0; }
+  padding: 2rem 0;
+  transition: 0.3s; }
   .slides > div:first-child {
     margin-left: 50%; }
   .slides > div:last-child {

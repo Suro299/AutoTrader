@@ -14,7 +14,7 @@
     </div>
 
     <div class = "pages_header">
-      <a class = "{% if page == 'Autobazaar' %} active {% endif %}" href=""> Autobazaar </a>
+      <a class = "{% if page == 'auto_market' %} active {% endif %}" href="{% url 'auto_market' %}"> Auto Market </a>
       <a class = "{% if page == 'garage' %} active {% endif %}" href="{% url 'garage' %}"> Garage </a>
       <a class = "{% if page == 'bfd' %} active {% endif %}" href="{% url 'bfd' %}"> Buy from Dealer  </a>
     </div>

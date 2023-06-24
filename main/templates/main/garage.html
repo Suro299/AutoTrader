@@ -33,7 +33,7 @@
                 </span>
 
                 <span class = "car_buttons">
-                  <a href = "#" class="button">
+                  <a href = "#" class="button sell_btn">
                     <div class="button-wrapper">
                       <div class="text"> Sell </div>
                       <span class="icon">
@@ -61,32 +61,31 @@
                 <a href="#" class="next"> <img src="{% static 'main/icons/scroll_buttons.png' %}" alt=""> </a>
             </span>
         </div>
-          
-    </main>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const slidesContainer = document.querySelector('.slides');
+        
+        <div id = "sell_menu" class = "sell_menu">
+          <form method = "post" class = "sell_menu__form">
+            {% csrf_token %}
+            <h1 class = "sell_menu__form-title"> Sell at Auto market </h1>
+            <h2 class = "sell_menu__form-car_name"> Car name </h2>
 
-        prevBtn.addEventListener('click', function(e) {
-          
-          e.preventDefault();
-          slidesContainer.scrollBy({
-            left: -100,
-            behavior: 'smooth'
-          });
-        });
-      
-        nextBtn.addEventListener('click', function(e) {
-          
-          e.preventDefault();
-          slidesContainer.scrollBy({
-            left: 1000,
-            behavior: 'smooth'
-          });
-        });
-      });
-  </script>
+            <input class = "sell_menu__form-input" type="number" placeholder = "Price"> 
+            
+            <label class="sell_menu__form-label">
+              <input class="sell_menu__form-label__input-checkbox" type="checkbox">
+              Sell Tuning
+            </label>
+
+            <button class = "sell_menu__form-submit_button" type = "submit"> Sell </button>
+          </form>
+
+
+          <form method = "post" class = "sell_menu__form">
+              <h1 class = "sell_menu__form-title"> Sell to dealer </h1>
+              <h2 class = "sell_menu__form-car_name"> Car name </h2>
+          </form>
+        </div>
+    </main>
+
+    <script src="{% static 'main/js/garage/app.js' %}"></script>
+</body>
 </html>
